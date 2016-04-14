@@ -1,0 +1,13 @@
+<ion-navbar *navbar>
+  <ion-title>Tab 1</ion-title>
+</ion-navbar>
+
+<ion-content padding class="page1">
+  <button (click)="openCamera()">Open Camera</button>
+
+  <ion-camera *ngIf="showCamera" (onPhoto)="onPhoto($event)" (onPhotoError)="onPhotoError($event)"></ion-camera>
+
+  <div id="image-placeholder">
+    <img [src]="photo" *ngIf="photo">
+  </div>
+</ion-content>
